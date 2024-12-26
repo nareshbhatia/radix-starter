@@ -1,0 +1,11 @@
+.header {
+  width: 100%;
+  /** TODO: is --gray-6 the correct semantic token? */
+  border-bottom: 1px solid var(--gray-6);
+}
+
+.container {
+  /** TODO: what's the semantic way to specify this height? */
+  height: 3.5rem; /* 56px */
+  justify-content: center;
+}
