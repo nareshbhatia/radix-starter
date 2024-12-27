@@ -1,0 +1,5 @@
+/* ----- Radix Themes Overrides ----- */
+.radix-themes {
+	--default-font-family:  Inter;
+    --code-font-family: 'Roboto Mono';
+}

@@ -4,8 +4,8 @@ A minimal template to get started with Radix UI and Radix Themes.
 
 **Tech Stack**
 
-1. Framework: React 18 + Vite + React Router
-2. Styling: Radix Themes
+1. Framework: React 18 + Vite + React Router 7
+2. Styling: Radix Themes 3
 3. Linting: Code Shaper ESLint configuration
 
 ![Screenshot](assets/screenshot.png)
