@@ -15,7 +15,7 @@ const router = createBrowserRouter(routes);
 root.render(
   <StrictMode>
     <Theme
-      accentColor="indigo"
+      accentColor="blue"
       appearance="dark"
       grayColor="auto"
       radius="medium"
