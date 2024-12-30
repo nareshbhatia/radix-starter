@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  /** TODO: is --gray-6 the correct semantic token? */
+  /** Note: here --gray-6 is a semantic token, not the hard coded gray at the :root */
   border-bottom: 1px solid var(--gray-6);
 }
 
