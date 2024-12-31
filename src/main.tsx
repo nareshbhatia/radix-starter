@@ -1,5 +1,6 @@
 import { routes } from './routes';
 import { Theme } from '@radix-ui/themes';
+import { ThemeProvider } from 'next-themes';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router';
@@ -14,14 +15,10 @@ const router = createBrowserRouter(routes);
 
 root.render(
   <StrictMode>
-    <Theme
-      accentColor="blue"
-      appearance="dark"
-      grayColor="auto"
-      radius="medium"
-      scaling="100%"
-    >
-      <RouterProvider router={router} />
-    </Theme>
+    <ThemeProvider attribute="class">
+      <Theme accentColor="blue" grayColor="auto" radius="medium">
+        <RouterProvider router={router} />
+      </Theme>
+    </ThemeProvider>
   </StrictMode>,
 );
