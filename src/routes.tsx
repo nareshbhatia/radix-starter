@@ -1,5 +1,6 @@
-import { HomePage } from './routes/home';
-import { RootLayout } from './routes/root';
+import { RootLayout } from './app/root';
+import { HomePage } from './app/routes/home/route';
+import { RoutePath } from './utils/RoutePath';
 import type { RouteObject } from 'react-router';
 
 export const routes: RouteObject[] = [
@@ -7,7 +8,7 @@ export const routes: RouteObject[] = [
     element: <RootLayout />,
     children: [
       {
-        path: '/',
+        path: RoutePath.Home,
         element: <HomePage />,
       },
     ],
