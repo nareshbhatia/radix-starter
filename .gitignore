@@ -22,6 +22,7 @@ dist-ssr
 *.sw?
 
 # Vite
+tsconfig.tsbuildinfo
 tsconfig.node.tsbuildinfo
 vite.config.d.ts
 vite.config.js
