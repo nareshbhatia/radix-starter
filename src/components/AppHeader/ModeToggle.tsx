@@ -1,4 +1,4 @@
-import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
+import { Icons } from '../Icons';
 import { IconButton } from '@radix-ui/themes';
 import { useTheme } from 'next-themes';
 
@@ -11,7 +11,7 @@ export function ModeToggle() {
 
   return (
     <IconButton onClick={handleClick} variant="ghost">
-      {theme === 'light' ? <MoonIcon /> : <SunIcon />}
+      {theme === 'light' ? <Icons.moon /> : <Icons.sun />}
     </IconButton>
   );
 }

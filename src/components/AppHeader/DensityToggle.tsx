@@ -1,4 +1,4 @@
-import { DotsVerticalIcon } from '@radix-ui/react-icons';
+import { Icons } from '../Icons';
 import { IconButton, DropdownMenu, useThemeContext } from '@radix-ui/themes';
 
 enum Scaling {
@@ -25,7 +25,7 @@ export function DensityToggle() {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger>
         <IconButton variant="ghost">
-          <DotsVerticalIcon />
+          <Icons.dotsVertical />
         </IconButton>
       </DropdownMenu.Trigger>
       <DropdownMenu.Content>

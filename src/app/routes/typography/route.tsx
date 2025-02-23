@@ -1,6 +1,5 @@
 import {
   Blockquote,
-  Button,
   Code,
   Container,
   Em,
@@ -12,7 +11,7 @@ import {
   Text,
 } from '@radix-ui/themes';
 
-export function HomePage() {
+export function TypographyPage() {
   return (
     <Container px="6" py="4" size="4">
       <Flex direction="column" gap="4" mb="8">
@@ -49,22 +48,8 @@ export function HomePage() {
           <Quote>
             Styles come and go. Good design is a language, not a style
           </Quote>
-          , elegantly summs up Massimo’s philosophy of design.
+          , elegantly sums up Massimo’s philosophy of design.
         </Text>
-      </Flex>
-
-      <Flex direction="column" gap="4" mb="8">
-        <Heading>Buttons</Heading>
-        <Flex gap="4">
-          <Button>Next</Button>
-          <Button highContrast>Next</Button>
-          <Button color="gray">Next</Button>
-          <Button color="gray" highContrast>
-            Next
-          </Button>
-          <Button disabled>Next</Button>
-          <Button loading>Next</Button>
-        </Flex>
       </Flex>
     </Container>
   );
