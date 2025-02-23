@@ -1,6 +1,6 @@
 import styles from './AppHeader.module.css';
 import { MainNav } from './MainNav';
-import { NavRight } from './RightNav';
+import { RightNav } from './RightNav';
 import { Container, Flex } from '@radix-ui/themes';
 
 export function AppHeader() {
@@ -9,7 +9,7 @@ export function AppHeader() {
       <Container className={styles.container} px="6" size="4">
         <Flex align="center" justify="between">
           <MainNav />
-          <NavRight />
+          <RightNav />
         </Flex>
       </Container>
     </header>

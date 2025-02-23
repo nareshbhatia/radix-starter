@@ -2,7 +2,7 @@ import { DensityToggle } from './DensityToggle';
 import { ModeToggle } from './ModeToggle';
 import styles from './RightNav.module.css';
 
-export function NavRight() {
+export function RightNav() {
   return (
     <nav className={styles.nav}>
       <ModeToggle />
