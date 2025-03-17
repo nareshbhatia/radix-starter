@@ -1,5 +1,6 @@
 export enum RoutePath {
-  Typography = '/',
+  Colors = '/',
+  Typography = '/typography',
   Buttons = '/buttons',
   KitchenSink = '/kitchen-sink',
 }

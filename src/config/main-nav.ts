@@ -7,6 +7,10 @@ export interface NavItem {
 
 export const mainNavItems: NavItem[] = [
   {
+    title: 'Colors',
+    href: RoutePath.Colors,
+  },
+  {
     title: 'Typography',
     href: RoutePath.Typography,
   },

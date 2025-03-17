@@ -1,15 +1,13 @@
+import styles from '../../../components/CustomTable/CustomTable.module.css';
+import { Box, Container, Flex, Heading, Link, Text } from '@radix-ui/themes';
 import {
-  Blockquote,
-  Code,
-  Container,
-  Em,
-  Flex,
-  Heading,
-  Link,
-  Quote,
-  Strong,
-  Text,
-} from '@radix-ui/themes';
+  accentColors,
+  textPropDefs,
+} from '@radix-ui/themes/dist/esm/props/index.js';
+
+function upperFirst(string: string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 export function TypographyPage() {
   return (
@@ -17,24 +15,8 @@ export function TypographyPage() {
       <Flex direction="column" gap="4" mb="8">
         <Heading>Typography</Heading>
 
-        <div>
-          <Heading size="4">{`<Text>`}</Heading>
-          <Text>
-            <code>var(--gray-12)</code> (from <code>.radix-themes</code>)
-            <br />
-            The goal of typography is to relate font size, line height, and line
-            width in a proportional way that maximizes beauty and makes reading
-            easier and more pleasant. The question is: What proportion(s) will
-            give us the best results? The golden ratio is often observed in
-            nature where beauty and utility intersect; perhaps we can use this
-            “divine” proportion to enhance these attributes in our typography.
-          </Text>
-        </div>
-
-        <div>
-          <Heading size="4">{`<Text color="gray">`}</Heading>
-          <code>var(--gray-11)</code> (step 11: low contrast text))
-          <br />
+        <Heading size="4">Text</Heading>
+        <Box style={{ width: 'calc(760px * var(--scaling))' }}>
           <Text color="gray">
             The goal of typography is to relate font size, line height, and line
             width in a proportional way that maximizes beauty and makes reading
@@ -43,12 +25,9 @@ export function TypographyPage() {
             nature where beauty and utility intersect; perhaps we can use this
             “divine” proportion to enhance these attributes in our typography.
           </Text>
-        </div>
+        </Box>
 
-        <div>
-          <Heading size="4">{`<Text color="gray" highContrast>`}</Heading>
-          <code>var(--gray-12)</code> (step 12: high contrast text))
-          <br />
+        <Box style={{ width: 'calc(760px * var(--scaling))' }}>
           <Text color="gray" highContrast>
             The goal of typography is to relate font size, line height, and line
             width in a proportional way that maximizes beauty and makes reading
@@ -57,48 +36,66 @@ export function TypographyPage() {
             nature where beauty and utility intersect; perhaps we can use this
             “divine” proportion to enhance these attributes in our typography.
           </Text>
-        </div>
-
-        <div>
-          <Heading size="4">{`<Text color="blue">`}</Heading>
-          <code>var(--accent-11)</code> (step 11: low contrast text))
-          <br />
-          <Text color="blue">
-            The goal of typography is to relate font size, line height, and line
-            width in a proportional way that maximizes beauty and makes reading
-            easier and more pleasant. The question is: What proportion(s) will
-            give us the best results? The golden ratio is often observed in
-            nature where beauty and utility intersect; perhaps we can use this
-            “divine” proportion to enhance these attributes in our typography.
-          </Text>
-        </div>
-
-        <Heading size="4">Blockquote</Heading>
-        <Blockquote>
-          Perfect typography is certainly the most elusive of all arts.
-          Sculpture in stone alone comes near it in obstinacy.
-        </Blockquote>
-
-        <Heading size="4">Code</Heading>
-        <Code>console.log()</Code>
-
-        <Heading size="4">Emphasis and Strong</Heading>
-        <Text>
-          The <Em>most</Em> important thing to remember is,{' '}
-          <Strong>stay positive</Strong>.
-        </Text>
+        </Box>
 
         <Heading size="4">Link</Heading>
         <Link href="#">Sign up</Link>
 
-        <Heading size="4">Quote</Heading>
-        <Text>
-          His famous quote,{' '}
-          <Quote>
-            Styles come and go. Good design is a language, not a style
-          </Quote>
-          , elegantly sums up Massimo’s philosophy of design.
-        </Text>
+        <Heading size="4">All colors</Heading>
+        <Box style={{ width: 'calc(760px * var(--scaling))' }}>
+          <table
+            className={styles.CustomTable}
+            style={{ whiteSpace: 'nowrap' }}
+          >
+            <tbody>
+              {accentColors.map((color) => (
+                <tr key={color} style={{ verticalAlign: 'baseline' }}>
+                  <td>{upperFirst(color)}</td>
+                  <td>
+                    <Text color={color} mr="4">
+                      The quick brown fox jumps over the lazy dog
+                    </Text>
+                    <Text color={color} highContrast>
+                      The quick brown fox jumps over the lazy dog
+                    </Text>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </Box>
+
+        <Heading size="4">All sizes</Heading>
+        <Flex direction="column" gap="4" style={{ whiteSpace: 'nowrap' }}>
+          {textPropDefs.size.values.map((size) => (
+            <Flex align="center" key={size}>
+              <Box flexShrink="0" style={{ width: 80 }}>
+                <Text color="gray" size="1">
+                  Size {size}
+                </Text>
+              </Box>
+              <Text size={size}>
+                The quick brown fox jumped over the lazy dog
+              </Text>
+            </Flex>
+          ))}
+        </Flex>
+
+        <Heading size="4">All weights</Heading>
+        <table className={styles.CustomTable} style={{ whiteSpace: 'nowrap' }}>
+          <tbody>
+            {textPropDefs.weight.values.map((weight) => (
+              <tr key={weight} style={{ verticalAlign: 'baseline' }}>
+                <td>{upperFirst(weight)}</td>
+                <td style={{ textAlign: 'left' }}>
+                  <Text weight={weight}>
+                    The quick brown fox jumps over the lazy dog
+                  </Text>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </Flex>
     </Container>
   );
