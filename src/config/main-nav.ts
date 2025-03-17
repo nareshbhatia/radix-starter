@@ -14,4 +14,8 @@ export const mainNavItems: NavItem[] = [
     title: 'Buttons',
     href: RoutePath.Buttons,
   },
+  {
+    title: 'Kitchen Sink',
+    href: RoutePath.KitchenSink,
+  },
 ];

@@ -17,12 +17,61 @@ export function TypographyPage() {
       <Flex direction="column" gap="4" mb="8">
         <Heading>Typography</Heading>
 
-        <Heading size="4">Text</Heading>
-        <Text>
-          The goal of typography is to relate font size, line height, and line
-          width in a proportional way that maximizes beauty and makes reading
-          easier and more pleasant.
-        </Text>
+        <div>
+          <Heading size="4">{`<Text>`}</Heading>
+          <Text>
+            <code>var(--gray-12)</code> (from <code>.radix-themes</code>)
+            <br />
+            The goal of typography is to relate font size, line height, and line
+            width in a proportional way that maximizes beauty and makes reading
+            easier and more pleasant. The question is: What proportion(s) will
+            give us the best results? The golden ratio is often observed in
+            nature where beauty and utility intersect; perhaps we can use this
+            “divine” proportion to enhance these attributes in our typography.
+          </Text>
+        </div>
+
+        <div>
+          <Heading size="4">{`<Text color="gray">`}</Heading>
+          <code>var(--gray-11)</code> (step 11: low contrast text))
+          <br />
+          <Text color="gray">
+            The goal of typography is to relate font size, line height, and line
+            width in a proportional way that maximizes beauty and makes reading
+            easier and more pleasant. The question is: What proportion(s) will
+            give us the best results? The golden ratio is often observed in
+            nature where beauty and utility intersect; perhaps we can use this
+            “divine” proportion to enhance these attributes in our typography.
+          </Text>
+        </div>
+
+        <div>
+          <Heading size="4">{`<Text color="gray" highContrast>`}</Heading>
+          <code>var(--gray-12)</code> (step 12: high contrast text))
+          <br />
+          <Text color="gray" highContrast>
+            The goal of typography is to relate font size, line height, and line
+            width in a proportional way that maximizes beauty and makes reading
+            easier and more pleasant. The question is: What proportion(s) will
+            give us the best results? The golden ratio is often observed in
+            nature where beauty and utility intersect; perhaps we can use this
+            “divine” proportion to enhance these attributes in our typography.
+          </Text>
+        </div>
+
+        <div>
+          <Heading size="4">{`<Text color="blue">`}</Heading>
+          <code>var(--accent-11)</code> (step 11: low contrast text))
+          <br />
+          <Text color="blue">
+            The goal of typography is to relate font size, line height, and line
+            width in a proportional way that maximizes beauty and makes reading
+            easier and more pleasant. The question is: What proportion(s) will
+            give us the best results? The golden ratio is often observed in
+            nature where beauty and utility intersect; perhaps we can use this
+            “divine” proportion to enhance these attributes in our typography.
+          </Text>
+        </div>
 
         <Heading size="4">Blockquote</Heading>
         <Blockquote>
