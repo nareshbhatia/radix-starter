@@ -8,7 +8,13 @@ A minimal template to get started with Radix UI and Radix Themes.
 2. Styling: Radix Themes 3
 3. Linting: Code Shaper ESLint configuration
 
-![Screenshot](assets/screenshot.png)
+![Colors](assets/colors.png)
+
+![Typography](assets/typography.png)
+
+![Buttons](assets/buttons.png)
+
+![Kitchen Sink](assets/kitchen-sink.png)
 
 ## Prerequisites for development
 
