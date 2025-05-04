@@ -4,7 +4,11 @@ import { Box, Flex, Text } from '@radix-ui/themes';
 // pulling the first scale and getting the keys from it
 const colorKeys = Object.keys(Object.values(Colors)[0]);
 
-export function ColorScaleGroup({ children }: { children: any }) {
+interface ColorScaleGroupProps {
+  children: React.ReactNode;
+}
+
+export function ColorScaleGroup({ children }: ColorScaleGroupProps) {
   return (
     <>
       <Flex style={{ gap: 1 }}>
@@ -23,13 +27,12 @@ export function ColorScaleGroup({ children }: { children: any }) {
   );
 }
 
-export function ColorScale({
-  label,
-  name,
-}: {
+interface ColorScaleProps {
   label: string;
   name: keyof typeof Colors;
-}) {
+}
+
+export function ColorScale({ label, name }: ColorScaleProps) {
   // eslint-disable-next-line import/namespace
   const scale = Colors[name];
 

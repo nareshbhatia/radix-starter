@@ -1,8 +1,17 @@
+import type { NavItem } from '../../config/main-nav';
 import { mainNavItems } from '../../config/main-nav';
 import { siteConfig } from '../../config/site';
 import { Icons } from '../Icons';
 import { Flex, TabNav, Text } from '@radix-ui/themes';
 import { NavLink, useLocation } from 'react-router';
+
+function isNavItemActive(item: NavItem, pathname: string) {
+  return (
+    // item.href === '/' is a special case, matching only if pathname is exactly '/'
+    (item.href === '/' && pathname === '/') ||
+    (item.href !== '/' && pathname.startsWith(item.href))
+  );
+}
 
 export function MainNav() {
   const { pathname } = useLocation();
@@ -15,7 +24,11 @@ export function MainNav() {
       </Flex>
       <TabNav.Root>
         {mainNavItems.map((item) => (
-          <TabNav.Link active={pathname === item.href} asChild key={item.href}>
+          <TabNav.Link
+            active={isNavItemActive(item, pathname)}
+            asChild
+            key={item.href}
+          >
             <NavLink to={item.href}>{item.title}</NavLink>
           </TabNav.Link>
         ))}
